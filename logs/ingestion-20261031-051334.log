@@ -1,0 +1,193 @@
+SOURCES -> INGESTION | Kafka producer/consumer evidence
+bootstrap=localhost:9092 | topic=traffic-events | partitions=3
+TOPIC_READY name=traffic-events | partitions=3 | replicas=1
+
+=== LOAD TEST target_rate=100 events/s count=5000 ===
+CONSUMER READY topic=traffic-events | group=ingestion-demo-20261031-051334-100_0 | partitions=3
+CONSUMER EVENT {"event_id": "cdca514a-5727-4875-b583-7f615c8611a4", "event_time": "2026-10-30T22:13:35.983+00:00", "event_type": "gps_position", "source": "simulated_vehicle_gps", "road_id": "BTH-DIEN-BIEN-PHU", "district": "Bình Thạnh", "latitude": 10.801707, "longitude": 106.711473, "sequence": 3, "payload": {"vehicle_id": "BUS-059", "speed_kmh": 45.9, "occupancy_pct": 13, "traffic_condition": "normal"}}
+CONSUMER EVENT {"event_id": "fbd7374c-ce05-4f22-8782-e05b5d761760", "event_time": "2026-10-30T22:13:35.983+00:00", "event_type": "gps_position", "source": "simulated_vehicle_gps", "road_id": "D1-NGUYEN-HUE", "district": "Quận 1", "latitude": 10.772766, "longitude": 106.701094, "sequence": 4, "payload": {"vehicle_id": "BUS-043", "speed_kmh": 34.2, "occupancy_pct": 46, "traffic_condition": "normal"}}
+CONSUMER METRICS total=364 | window_rate=72.6 events/s | event_to_consume_p95=17.7 ms | partitions=3
+CONSUMER METRICS total=865 | window_rate=100.1 events/s | event_to_consume_p95=18.1 ms | partitions=3
+CONSUMER METRICS total=1365 | window_rate=99.9 events/s | event_to_consume_p95=18.4 ms | partitions=3
+CONSUMER METRICS total=1866 | window_rate=100.1 events/s | event_to_consume_p95=18.1 ms | partitions=3
+CONSUMER METRICS total=2367 | window_rate=99.9 events/s | event_to_consume_p95=17.4 ms | partitions=3
+CONSUMER METRICS total=2868 | window_rate=99.9 events/s | event_to_consume_p95=18.2 ms | partitions=3
+CONSUMER METRICS total=3370 | window_rate=100.1 events/s | event_to_consume_p95=19.2 ms | partitions=3
+CONSUMER METRICS total=3871 | window_rate=100.0 events/s | event_to_consume_p95=17.8 ms | partitions=3
+CONSUMER METRICS total=4373 | window_rate=100.1 events/s | event_to_consume_p95=17.7 ms | partitions=3
+CONSUMER METRICS total=4873 | window_rate=99.9 events/s | event_to_consume_p95=17.8 ms | partitions=3
+CONSUMER SUMMARY received=5000 | elapsed=50.36s | avg_rate=99.3 events/s | event_to_consume_p50=11.2 ms | event_to_consume_p95=18.1 ms | latency_sample_count=5000 | unique_ids=5000 | duplicate_ids=0 | unique_sequences=5000 | duplicate_sequences=0 | invalid_sequences=0 | missing_sequences=0 | event_types={"gps_position": 3531, "road_sensor": 975, "traffic_incident": 494} | partitions=3
+PRODUCER Producer connected | topic=traffic-events | target_rate=100.0 events/s
+PRODUCER sent=100 | acknowledged=100 | failed=0 | ack_rate=100.8 events/s
+PRODUCER sent=200 | acknowledged=200 | failed=0 | ack_rate=100.4 events/s
+PRODUCER sent=300 | acknowledged=300 | failed=0 | ack_rate=100.1 events/s
+PRODUCER sent=400 | acknowledged=400 | failed=0 | ack_rate=100.2 events/s
+PRODUCER sent=500 | acknowledged=500 | failed=0 | ack_rate=100.1 events/s
+PRODUCER sent=600 | acknowledged=600 | failed=0 | ack_rate=100.1 events/s
+PRODUCER sent=700 | acknowledged=700 | failed=0 | ack_rate=100.1 events/s
+PRODUCER sent=800 | acknowledged=800 | failed=0 | ack_rate=100.1 events/s
+PRODUCER sent=900 | acknowledged=900 | failed=0 | ack_rate=100.1 events/s
+PRODUCER sent=1000 | acknowledged=1000 | failed=0 | ack_rate=100.1 events/s
+PRODUCER sent=1100 | acknowledged=1100 | failed=0 | ack_rate=100.1 events/s
+PRODUCER sent=1200 | acknowledged=1200 | failed=0 | ack_rate=100.1 events/s
+PRODUCER sent=1300 | acknowledged=1300 | failed=0 | ack_rate=100.1 events/s
+PRODUCER sent=1400 | acknowledged=1400 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=1500 | acknowledged=1500 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=1600 | acknowledged=1600 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=1700 | acknowledged=1700 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=1800 | acknowledged=1800 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=1900 | acknowledged=1900 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=2000 | acknowledged=2000 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=2100 | acknowledged=2100 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=2200 | acknowledged=2200 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=2300 | acknowledged=2300 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=2400 | acknowledged=2400 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=2500 | acknowledged=2500 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=2600 | acknowledged=2600 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=2700 | acknowledged=2700 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=2800 | acknowledged=2800 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=2900 | acknowledged=2900 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=3000 | acknowledged=3000 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=3100 | acknowledged=3100 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=3200 | acknowledged=3200 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=3300 | acknowledged=3300 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=3400 | acknowledged=3400 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=3500 | acknowledged=3500 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=3600 | acknowledged=3600 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=3700 | acknowledged=3700 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=3800 | acknowledged=3800 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=3900 | acknowledged=3900 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=4000 | acknowledged=4000 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=4100 | acknowledged=4100 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=4200 | acknowledged=4200 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=4300 | acknowledged=4300 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=4400 | acknowledged=4400 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=4500 | acknowledged=4500 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=4600 | acknowledged=4600 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=4700 | acknowledged=4700 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=4800 | acknowledged=4800 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=4900 | acknowledged=4900 | failed=0 | ack_rate=100.0 events/s
+PRODUCER sent=5000 | acknowledged=5000 | failed=0 | ack_rate=100.0 events/s
+PRODUCER Producer stopped | sent=5000 | acknowledged=5000 | failed=0 | elapsed=50.00s | ack_rate=100.0 events/s
+
+=== LOAD TEST target_rate=500 events/s count=5000 ===
+CONSUMER READY topic=traffic-events | group=ingestion-demo-20261031-051334-500_0 | partitions=3
+CONSUMER EVENT {"event_id": "a8890c5d-42fb-41a4-9ab3-cfd485fbefb9", "event_time": "2026-10-30T22:14:28.009+00:00", "event_type": "gps_position", "source": "simulated_vehicle_gps", "road_id": "D1-NGUYEN-HUE", "district": "Quận 1", "latitude": 10.774838, "longitude": 106.703914, "sequence": 2, "payload": {"vehicle_id": "BUS-002", "speed_kmh": 48.1, "occupancy_pct": 86, "traffic_condition": "normal"}}
+CONSUMER EVENT {"event_id": "46ac25b1-f92e-471d-b015-1e2ad5d44cbe", "event_time": "2026-10-30T22:14:28.009+00:00", "event_type": "gps_position", "source": "simulated_vehicle_gps", "road_id": "Q7-NGUYEN-VAN-LINH", "district": "Quận 7", "latitude": 10.730782, "longitude": 106.723609, "sequence": 4, "payload": {"vehicle_id": "BUS-060", "speed_kmh": 40.0, "occupancy_pct": 83, "traffic_condition": "normal"}}
+CONSUMER METRICS total=1812 | window_rate=361.8 events/s | event_to_consume_p95=20.6 ms | partitions=3
+CONSUMER METRICS total=4317 | window_rate=500.0 events/s | event_to_consume_p95=19.4 ms | partitions=3
+CONSUMER SUMMARY received=5000 | elapsed=10.37s | avg_rate=482.0 events/s | event_to_consume_p50=10.1 ms | event_to_consume_p95=19.9 ms | latency_sample_count=5000 | unique_ids=5000 | duplicate_ids=0 | unique_sequences=5000 | duplicate_sequences=0 | invalid_sequences=0 | missing_sequences=0 | event_types={"gps_position": 3449, "road_sensor": 1079, "traffic_incident": 472} | partitions=3
+PRODUCER Producer connected | topic=traffic-events | target_rate=500.0 events/s
+PRODUCER sent=100 | acknowledged=100 | failed=0 | ack_rate=497.6 events/s
+PRODUCER sent=200 | acknowledged=200 | failed=0 | ack_rate=499.7 events/s
+PRODUCER sent=300 | acknowledged=300 | failed=0 | ack_rate=499.3 events/s
+PRODUCER sent=400 | acknowledged=400 | failed=0 | ack_rate=499.7 events/s
+PRODUCER sent=500 | acknowledged=500 | failed=0 | ack_rate=499.3 events/s
+PRODUCER sent=600 | acknowledged=600 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=700 | acknowledged=700 | failed=0 | ack_rate=499.7 events/s
+PRODUCER sent=800 | acknowledged=800 | failed=0 | ack_rate=499.8 events/s
+PRODUCER sent=900 | acknowledged=900 | failed=0 | ack_rate=499.8 events/s
+PRODUCER sent=1000 | acknowledged=1000 | failed=0 | ack_rate=500.0 events/s
+PRODUCER sent=1100 | acknowledged=1100 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=1200 | acknowledged=1200 | failed=0 | ack_rate=500.0 events/s
+PRODUCER sent=1300 | acknowledged=1300 | failed=0 | ack_rate=500.0 events/s
+PRODUCER sent=1400 | acknowledged=1400 | failed=0 | ack_rate=499.7 events/s
+PRODUCER sent=1500 | acknowledged=1500 | failed=0 | ack_rate=499.7 events/s
+PRODUCER sent=1600 | acknowledged=1600 | failed=0 | ack_rate=499.8 events/s
+PRODUCER sent=1700 | acknowledged=1700 | failed=0 | ack_rate=499.8 events/s
+PRODUCER sent=1800 | acknowledged=1800 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=1900 | acknowledged=1900 | failed=0 | ack_rate=499.8 events/s
+PRODUCER sent=2000 | acknowledged=2000 | failed=0 | ack_rate=499.7 events/s
+PRODUCER sent=2100 | acknowledged=2100 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=2200 | acknowledged=2200 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=2300 | acknowledged=2300 | failed=0 | ack_rate=500.0 events/s
+PRODUCER sent=2400 | acknowledged=2400 | failed=0 | ack_rate=499.8 events/s
+PRODUCER sent=2500 | acknowledged=2500 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=2600 | acknowledged=2600 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=2700 | acknowledged=2700 | failed=0 | ack_rate=500.0 events/s
+PRODUCER sent=2800 | acknowledged=2800 | failed=0 | ack_rate=499.8 events/s
+PRODUCER sent=2900 | acknowledged=2900 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=3000 | acknowledged=3000 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=3100 | acknowledged=3100 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=3200 | acknowledged=3200 | failed=0 | ack_rate=499.7 events/s
+PRODUCER sent=3300 | acknowledged=3300 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=3400 | acknowledged=3400 | failed=0 | ack_rate=499.8 events/s
+PRODUCER sent=3500 | acknowledged=3500 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=3600 | acknowledged=3600 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=3700 | acknowledged=3700 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=3800 | acknowledged=3800 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=3900 | acknowledged=3900 | failed=0 | ack_rate=500.0 events/s
+PRODUCER sent=4000 | acknowledged=4000 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=4100 | acknowledged=4100 | failed=0 | ack_rate=500.0 events/s
+PRODUCER sent=4200 | acknowledged=4200 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=4300 | acknowledged=4300 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=4400 | acknowledged=4400 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=4500 | acknowledged=4500 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=4600 | acknowledged=4600 | failed=0 | ack_rate=500.0 events/s
+PRODUCER sent=4700 | acknowledged=4700 | failed=0 | ack_rate=500.0 events/s
+PRODUCER sent=4800 | acknowledged=4800 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=4900 | acknowledged=4900 | failed=0 | ack_rate=499.9 events/s
+PRODUCER sent=5000 | acknowledged=5000 | failed=0 | ack_rate=499.9 events/s
+PRODUCER Producer stopped | sent=5000 | acknowledged=5000 | failed=0 | elapsed=10.00s | ack_rate=499.9 events/s
+
+=== LOAD TEST target_rate=1000 events/s count=5000 ===
+CONSUMER READY topic=traffic-events | group=ingestion-demo-20261031-051334-1000_0 | partitions=3
+CONSUMER EVENT {"event_id": "bf5e0adc-e89c-4e93-81f1-e09d232f3495", "event_time": "2026-10-30T22:14:39.906+00:00", "event_type": "gps_position", "source": "simulated_vehicle_gps", "road_id": "BTH-DIEN-BIEN-PHU", "district": "Bình Thạnh", "latitude": 10.802085, "longitude": 106.71049, "sequence": 1, "payload": {"vehicle_id": "BUS-040", "speed_kmh": 45.5, "occupancy_pct": 64, "traffic_condition": "normal"}}
+CONSUMER EVENT {"event_id": "ef90c2fe-472d-41ef-8df3-618eb670270a", "event_time": "2026-10-30T22:14:40.024+00:00", "event_type": "gps_position", "source": "simulated_vehicle_gps", "road_id": "Q7-NGUYEN-VAN-LINH", "district": "Quận 7", "latitude": 10.729887, "longitude": 106.719948, "sequence": 4, "payload": {"vehicle_id": "BUS-087", "speed_kmh": 47.3, "occupancy_pct": 30, "traffic_condition": "normal"}}
+CONSUMER METRICS total=3632 | window_rate=726.3 events/s | event_to_consume_p95=21.3 ms | partitions=3
+CONSUMER SUMMARY received=5000 | elapsed=5.36s | avg_rate=932.1 events/s | event_to_consume_p50=11.9 ms | event_to_consume_p95=20.7 ms | latency_sample_count=5000 | unique_ids=5000 | duplicate_ids=0 | unique_sequences=5000 | duplicate_sequences=0 | invalid_sequences=0 | missing_sequences=0 | event_types={"gps_position": 3528, "road_sensor": 976, "traffic_incident": 496} | partitions=3
+PRODUCER Producer connected | topic=traffic-events | target_rate=1000.0 events/s
+PRODUCER sent=100 | acknowledged=100 | failed=0 | ack_rate=719.1 events/s
+PRODUCER sent=200 | acknowledged=200 | failed=0 | ack_rate=980.2 events/s
+PRODUCER sent=300 | acknowledged=300 | failed=0 | ack_rate=993.7 events/s
+PRODUCER sent=400 | acknowledged=400 | failed=0 | ack_rate=993.0 events/s
+PRODUCER sent=500 | acknowledged=500 | failed=0 | ack_rate=994.8 events/s
+PRODUCER sent=600 | acknowledged=600 | failed=0 | ack_rate=996.2 events/s
+PRODUCER sent=700 | acknowledged=700 | failed=0 | ack_rate=996.4 events/s
+PRODUCER sent=800 | acknowledged=800 | failed=0 | ack_rate=996.0 events/s
+PRODUCER sent=900 | acknowledged=900 | failed=0 | ack_rate=997.5 events/s
+PRODUCER sent=1000 | acknowledged=1000 | failed=0 | ack_rate=995.7 events/s
+PRODUCER sent=1100 | acknowledged=1100 | failed=0 | ack_rate=997.8 events/s
+PRODUCER sent=1200 | acknowledged=1200 | failed=0 | ack_rate=997.7 events/s
+PRODUCER sent=1300 | acknowledged=1300 | failed=0 | ack_rate=998.1 events/s
+PRODUCER sent=1400 | acknowledged=1400 | failed=0 | ack_rate=996.9 events/s
+PRODUCER sent=1500 | acknowledged=1500 | failed=0 | ack_rate=998.0 events/s
+PRODUCER sent=1600 | acknowledged=1600 | failed=0 | ack_rate=998.5 events/s
+PRODUCER sent=1700 | acknowledged=1700 | failed=0 | ack_rate=998.5 events/s
+PRODUCER sent=1800 | acknowledged=1800 | failed=0 | ack_rate=998.6 events/s
+PRODUCER sent=1900 | acknowledged=1900 | failed=0 | ack_rate=999.0 events/s
+PRODUCER sent=2000 | acknowledged=2000 | failed=0 | ack_rate=998.2 events/s
+PRODUCER sent=2100 | acknowledged=2100 | failed=0 | ack_rate=998.7 events/s
+PRODUCER sent=2200 | acknowledged=2200 | failed=0 | ack_rate=998.7 events/s
+PRODUCER sent=2300 | acknowledged=2300 | failed=0 | ack_rate=999.2 events/s
+PRODUCER sent=2400 | acknowledged=2400 | failed=0 | ack_rate=999.0 events/s
+PRODUCER sent=2500 | acknowledged=2500 | failed=0 | ack_rate=999.1 events/s
+PRODUCER sent=2600 | acknowledged=2600 | failed=0 | ack_rate=999.3 events/s
+PRODUCER sent=2700 | acknowledged=2700 | failed=0 | ack_rate=999.2 events/s
+PRODUCER sent=2800 | acknowledged=2800 | failed=0 | ack_rate=999.0 events/s
+PRODUCER sent=2900 | acknowledged=2900 | failed=0 | ack_rate=998.8 events/s
+PRODUCER sent=3000 | acknowledged=3000 | failed=0 | ack_rate=998.7 events/s
+PRODUCER sent=3100 | acknowledged=3100 | failed=0 | ack_rate=998.9 events/s
+PRODUCER sent=3200 | acknowledged=3200 | failed=0 | ack_rate=998.7 events/s
+PRODUCER sent=3300 | acknowledged=3300 | failed=0 | ack_rate=999.3 events/s
+PRODUCER sent=3400 | acknowledged=3400 | failed=0 | ack_rate=999.0 events/s
+PRODUCER sent=3500 | acknowledged=3500 | failed=0 | ack_rate=999.2 events/s
+PRODUCER sent=3600 | acknowledged=3600 | failed=0 | ack_rate=999.0 events/s
+PRODUCER sent=3700 | acknowledged=3700 | failed=0 | ack_rate=999.2 events/s
+PRODUCER sent=3800 | acknowledged=3800 | failed=0 | ack_rate=999.4 events/s
+PRODUCER sent=3900 | acknowledged=3900 | failed=0 | ack_rate=999.0 events/s
+PRODUCER sent=4000 | acknowledged=4000 | failed=0 | ack_rate=999.4 events/s
+PRODUCER sent=4100 | acknowledged=4100 | failed=0 | ack_rate=999.3 events/s
+PRODUCER sent=4200 | acknowledged=4200 | failed=0 | ack_rate=999.1 events/s
+PRODUCER sent=4300 | acknowledged=4300 | failed=0 | ack_rate=999.4 events/s
+PRODUCER sent=4400 | acknowledged=4400 | failed=0 | ack_rate=999.2 events/s
+PRODUCER sent=4500 | acknowledged=4500 | failed=0 | ack_rate=999.3 events/s
+PRODUCER sent=4600 | acknowledged=4600 | failed=0 | ack_rate=999.4 events/s
+PRODUCER sent=4700 | acknowledged=4700 | failed=0 | ack_rate=999.2 events/s
+PRODUCER sent=4800 | acknowledged=4800 | failed=0 | ack_rate=999.5 events/s
+PRODUCER sent=4900 | acknowledged=4900 | failed=0 | ack_rate=999.4 events/s
+PRODUCER sent=5000 | acknowledged=5000 | failed=0 | ack_rate=999.4 events/s
+PRODUCER Producer stopped | sent=5000 | acknowledged=5000 | failed=0 | elapsed=5.00s | ack_rate=999.2 events/s
+
+RESULT PASS | ACKs, counts, IDs, sequences, and event types verified
+LOG logs\ingestion-20261031-051334.log

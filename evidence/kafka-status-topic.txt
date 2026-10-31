@@ -1,0 +1,17 @@
+﻿MINH CHUNG KAFKA - QUY TRINH 1 SOURCES -> INGESTION
+Observed: 2026-10-31 (local development machine)
+
+Docker Compose status
+NAME                      IMAGE                SERVICE   STATUS                       PORTS
+bigdata-ingestion-kafka   apache/kafka:4.1.0   kafka     Up About an hour (healthy)   0.0.0.0:9092->9092/tcp
+
+Topic description (captured from Kafka)
+Topic: traffic-events
+PartitionCount: 3
+ReplicationFactor: 1
+Configs: min.insync.replicas=1
+Partition 0: Leader 1, Replicas 1, ISR 1
+Partition 1: Leader 1, Replicas 1, ISR 1
+Partition 2: Leader 1, Replicas 1, ISR 1
+
+Raw benchmark output: ../logs/ingestion-20261031-051334.log
